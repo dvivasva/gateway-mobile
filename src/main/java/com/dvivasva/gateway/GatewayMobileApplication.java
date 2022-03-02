@@ -2,6 +2,7 @@ package com.dvivasva.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.function.context.config.ContextFunctionCatalogAutoConfiguration;
 
 @SpringBootApplication
 public class GatewayMobileApplication {

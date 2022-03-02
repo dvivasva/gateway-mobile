@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Wallet {
+
     private String id;
     private String numberCard;
     private String numberPhone;
