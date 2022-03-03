@@ -10,7 +10,6 @@ public interface Topic {
 
     String INS_WALLET_JSON="ins-wallet-json";
     String UPD_ACCOUNT="upd-account";
-
     String LIST_ACCOUNT="lst-account";
 
 }

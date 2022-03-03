@@ -1,6 +1,7 @@
 package com.dvivasva.gateway.controller;
 
 import com.dvivasva.gateway.entity.Payment;
+import com.dvivasva.gateway.entity.Wallet;
 import com.dvivasva.gateway.service.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.state.QueryableStoreTypes;
@@ -24,8 +25,13 @@ public class KafkaController {
 
 
     @PostMapping("/payment")
-    public ResponseEntity<Payment> getObject(@RequestBody Payment payment){
-        var value= this.receiver.publishEvent(payment);
+    public ResponseEntity<Payment> createPayment(@RequestBody Payment payment){
+        var value= this.receiver.eventCreatePayment(payment);
+        return new ResponseEntity<>(value, HttpStatus.OK);
+    }
+    @PostMapping("/wallet")
+    public ResponseEntity<Wallet> createWallet(@RequestBody Wallet wallet){
+        var value= this.receiver.eventCreateWallet(wallet);
         return new ResponseEntity<>(value, HttpStatus.OK);
     }
 
